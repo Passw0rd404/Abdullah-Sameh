@@ -1,92 +1,81 @@
 export const siteConfig = {
-  name: "Ryan Fitzgerald",
-  title: "Senior Software Engineer",
-  description: "Portfolio website of Ryan Fitzgerald",
-  accentColor: "#1d4ed8",
+  name: "Abdullah Sameh",
+  title: "DevOps Engineer",
+  description: "Computer Science student and DevOps Engineer focused on Kubernetes, GitOps, and Cloud Automation.",
+  accentColor: "#1a56db",
   social: {
-    email: "your-email@example.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://x.com/rfitzio",
-    github: "https://github.com/RyanFitzgerald",
+    email: "Abdullah.Sameh40404@gmail.com",
+    linkedin: "https://linkedin.com/in/abdullah-sameh-0a3063366",
+    twitter: "", 
+    github: "https://github.com/Passw0rd404",
   },
-  aboutMe:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos asperiores nihil consequatur tempore cupiditate architecto natus commodi corrupti quas quasi facere est, dignissimos odit nam veniam sapiente ut, vitae eligendi ipsum dolor, nostrum ullam impedit! Corrupti ratione mollitia temporibus necessitatibus, consectetur reiciendis recusandae id, dolorum quaerat, vero pariatur. Ratione!",
-  skills: ["Javascript", "React", "Node.js", "Python", "AWS", "Docker"],
+  cvPdfPath: "/final.pdf", 
+  cvHtmlPath: "/final.html",
+  aboutMe: "Computer Science student with hands-on DevOps experience in Kubernetes orchestration, GitOps, CI/CD pipelines, cloud infrastructure automation, and containerization. Built full-stack applications from scratch and deployed a MERN stack to a multi-tier AWS architecture. Currently deploying a federated social media platform as microservices on Kubernetes. Focused on cloud-agnostic, maintainable infrastructure and automation-first practices.",
+  skills: ["AWS", "Kubernetes", "Docker", "Terraform", "Prometheus", "Grafana", "ArgoCD", "GitHub Actions", "Python", "Bash", "Helm", "Packer"],
   projects: [
     {
-      name: "AI Dev Roundup Newsletter",
-      description:
-        "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
-      link: "https://aidevroundup.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+      name: "Mastodon — Production Kubernetes Deployment",
+      description: "Deployed a federated social media platform on Kubernetes with microservices for web, streaming, and workers. Features high availability PostgreSQL via CloudNativePG and GitOps via ArgoCD.",
+      link: "https://github.com/Passw0rd404/mastodon-DevOps-version",
+      skills: ["Kubernetes", "GitOps", "PostgreSQL", "Longhorn"]
     },
     {
-      name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
-      description:
-        "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
-      link: "https://fullstackextensions.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+      name: "MERN E-Commerce — AWS 3-Tier Architecture",
+      description: "A production-grade AWS deployment using CloudFront, NLB, and ASGs in private subnets. Infrastructure managed via Terraform with AMIs baked by Packer.",
+      link: "https://github.com/Passw0rd404/mern-ecommerce-DevOps-version",
+      skills: ["AWS", "Terraform", "Packer", "OIDC"]
     },
     {
-      name: "ExtensionKit",
-      description:
-        "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
-      link: "https://extensionkit.io/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+      name: "HiveBox — IoT Temperature API",
+      description: "Aggregating live IoT sensor data using FastAPI; deployed on kind with Valkey caching and full Prometheus/Grafana observability.",
+      link: "https://github.com/Passw0rd404/HiveBox",
+      skills: ["FastAPI", "Prometheus", "Valkey"]
     },
+    {
+      name: "HealthAI Labs — AI-Powered Platform",
+      description: "Integrated 4 AI models including Gemini API; containerized with Docker Compose for multi-service orchestration.",
+      link: "https://github.com/co-op-projects-to-boost-my-experience/HealthAI-Labs",
+      skills: ["Docker Compose", "AI", "Gemini API"]
+    }
   ],
   experience: [
     {
-      company: "Tech Company",
-      title: "Senior Software Engineer",
-      dateRange: "Jan 2022 - Present",
+      company: "DevOps & Cloud Infrastructure",
+      title: "Seeking New Opportunities",
+      dateRange: "Present",
       bullets: [
-        "Led development of microservices architecture serving 1M+ users",
-        "Reduced API response times by 40% through optimization",
-        "Mentored team of 5 junior developers",
+        "Currently focusing on advanced Kubernetes patterns and cloud-native security.",
+        "Available for internships or DevOps roles."
       ],
-    },
-    {
-      company: "Startup Inc",
-      title: "Full Stack Developer",
-      dateRange: "Jun 2020 - Dec 2021",
-      bullets: [
-        "Built and launched MVP product from scratch using React and Node.js",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
-        "Collaborated with product team to define technical requirements",
-      ],
-    },
-    {
-      company: "Digital Agency",
-      title: "Frontend Developer",
-      dateRange: "Aug 2018 - May 2020",
-      bullets: [
-        "Developed responsive web applications for 20+ clients",
-        "Improved site performance scores by 35% on average",
-        "Introduced modern JavaScript frameworks to legacy codebases",
-      ],
-    },
+    }
   ],
   education: [
     {
-      school: "University Name",
-      degree: "Bachelor of Science in Computer Science",
-      dateRange: "2014 - 2018",
+      school: "Minoufia University, Egypt",
+      degree: "Bachelor of Science in Data Science",
+      dateRange: "Expected 2028",
       achievements: [
-        "Graduated Magna Cum Laude with 3.8 GPA",
-        "Dean's List all semesters",
-        "President of Computer Science Club",
+        "GPA: 3.01",
+        "Focused on AI and Data Science"
       ],
     },
     {
-      school: "Online Platform",
-      degree: "Full Stack Development Certificate",
-      dateRange: "2019",
+      school: "Cloud Native Base Camp",
+      degree: "AWS DevOps 90%",
+      dateRange: "Issued 2026",
       achievements: [
-        "Completed 500+ hours of coursework",
-        "Built 10+ portfolio projects",
-        "Specialized in React and Node.js",
+        "Validated skills in AWS & DevOps"
+      ],
+    },
+    {
+      school: "McKinsey & Company",
+      degree: "McKinsey Forward Program",
+      dateRange: "2024",
+      achievements: [
+        "Advanced leadership, business, and digital skills"
       ],
     },
   ],
 };
+
