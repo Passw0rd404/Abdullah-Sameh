@@ -99,3 +99,7 @@ html.dark .text-gray-100 { color: #1e1e1e !important; }
 html.dark #hero > div.absolute.-z-10 {
   opacity: 0.12;
 }
+/* ─── Hero symbols: more visible in dark mode ────────────────── */
+html.dark #hero svg rect:first-of-type {
+  opacity: 0.5 !important;
+}
