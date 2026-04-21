@@ -23,15 +23,9 @@ import "../styles/global.css";
       rel="stylesheet"
     />
     <title>{siteConfig.name} - {siteConfig.title}</title>
-    <!-- Apply dark mode before paint to avoid flash -->
+    <!-- Always force dark mode -->
     <script is:inline>
-      (function () {
-        const stored = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (stored === "dark" || (!stored && prefersDark)) {
-          document.documentElement.classList.add("dark");
-        }
-      })();
+      document.documentElement.classList.add("dark");
     </script>
   </head>
   <body>
