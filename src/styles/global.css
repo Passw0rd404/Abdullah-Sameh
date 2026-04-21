@@ -101,3 +101,8 @@ html.dark #hero svg {
 html.dark #symbols-rect {
   opacity: 0.5 !important;
 }
+/* ─── Hero SVG mask ──────────────────────────────────────────── */
+#hero-svg {
+  mask-image: radial-gradient(100% 100% at top right, white, transparent);
+  -webkit-mask-image: radial-gradient(100% 100% at top right, white, transparent);
+}
