@@ -103,3 +103,10 @@ html.dark #hero > div.absolute.-z-10 {
 html.dark #hero svg rect:first-of-type {
   opacity: 0.5 !important;
 }
+/* ─── Hero grid lines: visible in dark mode ─────────────────── */
+html.dark #hero svg rect:last-of-type {
+  opacity: 0.3 !important;
+}
+html.dark #hero svg .stroke-gray-200 {
+  stroke: #444444 !important;
+}
