@@ -1,11 +1,9 @@
 ---
 import { siteConfig } from "../config";
-
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 ---
-
 <header
   id="header"
   class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
@@ -55,24 +53,71 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
             </a>
           </li>
         )
-        }
+      }
       <li>
-  <a href={siteConfig.cvHtmlPath} target="_blank" class="text-gray-700 hover:text-black transition-colors font-medium">
-    View CV (HTML)
-  </a>
-  </li>
+        <a href={siteConfig.cvHtmlPath} target="_blank" class="text-gray-700 hover:text-black transition-colors font-medium">
+          View CV (HTML)
+        </a>
+      </li>
+      <li>
+        <button
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+          class="text-gray-700 hover:text-black transition-colors duration-300 cursor-pointer"
+        >
+          <!-- Sun icon (shown in dark mode) -->
+          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z" />
+          </svg>
+        </button>
+      </li>
     </ul>
   </nav>
 </header>
 
 <script>
+  // Scroll: add blur background
   window.addEventListener("scroll", () => {
     const header = document.getElementById("header");
+    const isDark = document.documentElement.classList.contains("dark");
     if (window.scrollY > 100) {
-      header?.classList.add("bg-white/80", "backdrop-blur-sm");
+      header?.classList.add("backdrop-blur-sm");
+      header?.classList.add(isDark ? "bg-black/80" : "bg-white/80");
     } else {
-      header?.classList.remove("bg-white/80", "backdrop-blur-sm");
+      header?.classList.remove("backdrop-blur-sm", "bg-white/80", "bg-black/80");
     }
+  });
+
+  // Theme toggle
+  const btn = document.getElementById("theme-toggle");
+  const sun = document.getElementById("icon-sun");
+  const moon = document.getElementById("icon-moon");
+  const html = document.documentElement;
+
+  function applyTheme(dark: boolean) {
+    if (dark) {
+      html.classList.add("dark");
+      sun?.classList.remove("hidden");
+      moon?.classList.add("hidden");
+      localStorage.setItem("theme", "dark");
+    } else {
+      html.classList.remove("dark");
+      sun?.classList.add("hidden");
+      moon?.classList.remove("hidden");
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Set correct icon on load
+  applyTheme(html.classList.contains("dark"));
+
+  btn?.addEventListener("click", () => {
+    applyTheme(!html.classList.contains("dark"));
   });
 </script>
 
@@ -81,4 +126,3 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
     scroll-behavior: smooth;
   }
 </style>
-

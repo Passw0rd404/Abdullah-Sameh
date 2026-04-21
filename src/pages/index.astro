@@ -9,7 +9,6 @@ import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
 import "../styles/global.css";
 ---
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -24,6 +23,16 @@ import "../styles/global.css";
       rel="stylesheet"
     />
     <title>{siteConfig.name} - {siteConfig.title}</title>
+    <!-- Apply dark mode before paint to avoid flash -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (stored === "dark" || (!stored && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <Header />
