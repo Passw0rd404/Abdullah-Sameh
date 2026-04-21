@@ -94,15 +94,3 @@ html.dark footer {
   border-color: #2a2a2a !important;
 }
 html.dark .text-gray-100 { color: #1e1e1e !important; }
-/* ─── Hero: dark mode fixes ──────────────────────────────────── */
-html.dark #hero svg {
-  stroke: #3a3a3a !important;
-}
-html.dark #symbols-rect {
-  opacity: 0.5 !important;
-}
-/* ─── Hero SVG mask ──────────────────────────────────────────── */
-#hero-svg {
-  mask-image: radial-gradient(100% 100% at top right, white, transparent);
-  -webkit-mask-image: radial-gradient(100% 100% at top right, white, transparent);
-}
