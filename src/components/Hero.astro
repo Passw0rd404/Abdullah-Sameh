@@ -7,7 +7,7 @@ import { siteConfig } from "../config";
   class="relative isolate overflow-hidden bg-white dark:bg-[#0f0f0f] py-24 md:h-screen"
   style={`--accent-color: ${siteConfig.accentColor}`}
 >
-  <!-- Gradient overlay: light mode uses accent, dark mode is dimmer -->
+  <!-- Gradient overlay: server-rendered for light mode, JS swaps for dark -->
   <div
     id="hero-gradient"
     class="absolute inset-0 -z-10"
@@ -147,14 +147,6 @@ import { siteConfig } from "../config";
 </div>
 
 <script>
-  const isDark = () => document.documentElement.classList.contains("dark");
-
-  const lightGradient = (accent: string) =>
-    `radial-gradient(ellipse 800px 1200px at 0% 0%, ${accent}40 0%, ${accent}25 20%, ${accent}10 40%, rgba(255,255,255,0.3) 70%, rgba(255,255,255,0.8) 90%, white 100%)`;
-
-  const darkGradient = (accent: string) =>
-    `radial-gradient(ellipse 800px 1200px at 0% 0%, ${accent}25 0%, ${accent}12 25%, ${accent}06 50%, transparent 80%)`;
-
   function applyHero() {
     const gradient = document.getElementById("hero-gradient");
     const symbolsRect = document.getElementById("symbols-rect");
@@ -162,18 +154,21 @@ import { siteConfig } from "../config";
     const accent = (hero
       ? getComputedStyle(hero).getPropertyValue("--accent-color").trim()
       : "") || "#1a56db";
+    const dark = document.documentElement.classList.contains("dark");
 
     if (gradient) {
-      gradient.style.background = isDark()
-        ? darkGradient(accent)
-        : lightGradient(accent);
+      // In light mode, clear JS style so the server-rendered inline style takes over
+      gradient.style.background = dark
+        ? `radial-gradient(ellipse 800px 1200px at 0% 0%, ${accent}25 0%, ${accent}12 25%, ${accent}06 50%, transparent 80%)`
+        : "";
     }
     if (symbolsRect) {
-      symbolsRect.setAttribute("opacity", isDark() ? "0.5" : "0.2");
+      symbolsRect.setAttribute("opacity", dark ? "0.5" : "0.2");
     }
   }
 
-  applyHero();
+  // Defer until after paint so dark class is stable
+  requestAnimationFrame(applyHero);
 
   const observer = new MutationObserver(applyHero);
   observer.observe(document.documentElement, {
