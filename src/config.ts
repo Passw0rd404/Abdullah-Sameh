@@ -4,13 +4,13 @@ export const siteConfig = {
   description: "Computer Science student and DevOps Engineer focused on Kubernetes, GitOps, and Cloud Automation.",
   accentColor: "#1a56db",
   social: {
-    email: "Abdullah.Sameh40404@gmail.com",
+    email: "me@abdullahsameh.qzz.io",
     linkedin: "https://linkedin.com/in/abdullah-sameh-0a3063366",
     twitter: "", 
     github: "https://github.com/Passw0rd404",
   },
-  cvPdfPath: "/Abdullah-Sameh/final.pdf", 
-  cvHtmlPath: "/Abdullah-Sameh/final.html",
+  cvPdfPath: "/final.pdf", 
+  cvHtmlPath: "/final.html",
   aboutMe: "Computer Science student with hands-on DevOps experience in Kubernetes orchestration, GitOps, CI/CD pipelines, cloud infrastructure automation, and containerization. Built full-stack applications from scratch and deployed a MERN stack to a multi-tier AWS architecture. Currently deploying a federated social media platform as microservices on Kubernetes. Focused on cloud-agnostic, maintainable infrastructure and automation-first practices.",
   skills: ["AWS", "Kubernetes", "Docker", "Terraform", "Prometheus", "Grafana", "ArgoCD", "GitHub Actions", "Python", "Bash", "Helm", "Packer"],
   projects: [
