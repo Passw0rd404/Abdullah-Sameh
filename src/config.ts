@@ -84,4 +84,4 @@ export const siteConfig = {
         "Focused on AI and Data Science"
       ],
     },
-  ] 
+  ]; 
