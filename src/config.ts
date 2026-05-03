@@ -54,7 +54,7 @@ export const siteConfig = {
     {
       school: "Amazon Web Services",
       degree: "AWS Solutions Architect Associate & Cloud Practitioner",
-      dateRange: "Issued 2025",
+      dateRange: "Issued 2026",
       achievements: [
         "Validated cloud architecture and foundational AWS skills"
       ],
@@ -62,7 +62,7 @@ export const siteConfig = {
     {
       school: "Cloud Native Base Camp",
       degree: "AWS DevOps — 90%",
-      dateRange: "Issued 2026",
+      dateRange: "Issued 2025",
       achievements: [
         "Validated skills in AWS & DevOps"
       ],
