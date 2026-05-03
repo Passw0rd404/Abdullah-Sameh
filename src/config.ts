@@ -52,17 +52,16 @@ export const siteConfig = {
   ],
   education: [
     {
-      school: "Minoufia University, Egypt",
-      degree: "Bachelor of Science in Data Science",
-      dateRange: "Expected 2028",
+      school: "Amazon Web Services",
+      degree: "AWS Solutions Architect Associate & Cloud Practitioner",
+      dateRange: "Issued 2025",
       achievements: [
-        "GPA: 3.01",
-        "Focused on AI and Data Science"
+        "Validated cloud architecture and foundational AWS skills"
       ],
     },
     {
       school: "Cloud Native Base Camp",
-      degree: "AWS DevOps 90%",
+      degree: "AWS DevOps — 90%",
       dateRange: "Issued 2026",
       achievements: [
         "Validated skills in AWS & DevOps"
@@ -76,6 +75,13 @@ export const siteConfig = {
         "Advanced leadership, business, and digital skills"
       ],
     },
-  ],
-};
-
+    {
+      school: "Minoufia University, Egypt",
+      degree: "Bachelor of Science in Data Science",
+      dateRange: "Expected 2028",
+      achievements: [
+        "GPA: 3.01",
+        "Focused on AI and Data Science"
+      ],
+    },
+  ] 
