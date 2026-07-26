@@ -4,7 +4,7 @@ export const siteConfig = {
   description: "Computer Science student and DevOps Engineer focused on Kubernetes, GitOps, and Cloud Automation.",
   accentColor: "#1a56db",
   social: {
-    email: "me@abdullahsameh.qzz.io",
+    email: "abdullah.sameh40404@gmail.com",
     linkedin: "https://linkedin.com/in/abdullah-sameh-0a3063366",
     twitter: "", 
     github: "https://github.com/Passw0rd404",
