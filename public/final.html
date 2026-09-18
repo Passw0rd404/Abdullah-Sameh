@@ -178,14 +178,15 @@
     <div class="project">
       <div class="proj-head">
         <span class="proj-name">Mastodon — Production Kubernetes Deployment (Federated Social Media Platform)</span>
-        <a class="proj-link" href="https://github.com/mastodon-DevOps-version" target="_blank">github.com/mastodon-DevOps-version</a>
+        <a class="proj-link" href="https://github.com/Passw0rd404/mastodon-SRE" target="_blank">github.com/mastodon-SRE</a>
       </div>
       <ul>
-        <li>Deployed a live federated social media platform on Kubernetes with separate microservice deployments for <strong>web</strong>, <strong>streaming</strong>, and <strong>Sidekiq</strong> background workers.</li>
-        <li>Self-hosted PostgreSQL using <strong>CloudNativePG</strong> with a primary + replica setup for high availability, avoiding any dependency on managed DB services.</li>
-        <li>Abstracted the storage layer with <strong>Longhorn CSI</strong>, making the entire deployment cloud-agnostic and decoupled from any specific cloud provider's block storage.</li>
-        <li>Cost-optimized node architecture: stateless app tier on <strong>Spot instances</strong>; stateful data services (PostgreSQL, MinIO, monitoring) on <strong>On-Demand nodes</strong>.</li>
-        <li>Built two independent CI/CD pipelines via <strong>GitHub Actions</strong> — one for the app, one for infrastructure — both synced through <strong>ArgoCD GitOps</strong>. TLS via cert-manager, secrets via Sealed Secrets.</li>
+        <li>Building a Kubernetes deployment for a live federated social media platform (<strong>Mastodon</strong>), designed to run on <strong>any online/cloud cluster</strong> — AWS, Civo, or otherwise — with <strong>autoscaling</strong> across web, streaming, and Sidekiq, plus a companion <strong>fediscoverer</strong> service that scales the same way.</li>
+        <li>Self-hosted, highly-available data layer: <strong>PostgreSQL via CloudNativePG</strong> (primary + replica), <strong>Redis via DandyDeveloper's redis-ha chart</strong> (Sentinel + HAProxy) for cache and Sidekiq queues, and <strong>Elasticsearch via ECK</strong> — no managed DB, cache, or search service dependency.</li>
+        <li>Storage relies on whatever CSI the target cluster provides, and ingress is handled by <strong>Traefik</strong> — keeping the entire repo portable across cloud providers rather than tied to any one vendor's tooling.</li>
+        <li>Cost-optimized node architecture: stateless app tier on <strong>Spot instances</strong>; stateful data services (PostgreSQL, Redis, Elasticsearch, MinIO) on <strong>On-Demand nodes</strong>.</li>
+        <li>Full observability via a self-hosted <strong>LGTM stack</strong> (Grafana, Loki, Tempo, Mimir/Prometheus) running on the cluster itself, plus a basic <strong>ChatOps</strong> setup for day-to-day operational tasks and alerts.</li>
+        <li>Two independent CI/CD pipelines via <strong>GitHub Actions</strong> — one for the app, one for infrastructure — both synced through <strong>ArgoCD</strong> GitOps, with TLS via cert-manager and secrets via Sealed Secrets.</li>
       </ul>
     </div>
 

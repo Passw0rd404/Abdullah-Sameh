@@ -17,7 +17,7 @@ export const siteConfig = {
     {
       name: "Mastodon — Production Kubernetes Deployment",
       description: "Deployed a federated social media platform on Kubernetes with microservices for web, streaming, and workers. Features high availability PostgreSQL via CloudNativePG and GitOps via ArgoCD.",
-      link: "https://github.com/Passw0rd404/mastodon-DevOps-version",
+      link: "https://github.com/Passw0rd404/mastodon-SRE",
       skills: ["Kubernetes", "GitOps", "PostgreSQL", "Longhorn"]
     },
     {
